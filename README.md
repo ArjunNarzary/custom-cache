@@ -6,7 +6,6 @@ A **customizable in-memory caching API** with **LRU (Least Recently Used) evicti
 
 ## 📌 Features
 
-✅ **LRU Eviction**: Moves recently accessed items to the end.  
 ✅ **TTL Expiry**: Auto-deletes expired keys (default: `2min`).  
 ✅ **Cache Limit**: Prevents storing new items if max size is reached.  
 ✅ **Efficient GET & DELETE**: O(1) operations using `Map`.  
@@ -19,8 +18,8 @@ A **customizable in-memory caching API** with **LRU (Least Recently Used) evicti
 ### 1️⃣ Clone Repository
 
 ```sh
-git clone https://github.com/your-username/cache-api.git
-cd cache-api
+git clone https://github.com/ArjunNarzary/custom-cache
+cd custom-cache
 ```
 
 ### 2️⃣ Install Dependencies
@@ -138,7 +137,7 @@ Response
 }
 ```
 
-🛠️ How It Works • TTL (Expiration): Entries auto-delete after 2min. • LRU (Least Recently Used): Whenever a key is fetched expiry time is renewed. • Cache Full?: Only expired items are removed. If no expired items exist, it returns an error instead of removing LRU. • \* • Periodic Cleanup: Every 5 seconds, expired keys are deleted.
+🛠️ How It Works • TTL (Expiration): Entries auto-delete after 2min. • LRU (Least Recently Used): Whenever a key is fetched, key is removed and added again with new TTL • Cache Full?: Only expired items are removed. If no expired items exist, it returns an error instead of removing LRU. • \* • Periodic Cleanup: Every 5 seconds, expired keys are deleted.
 
 🎯 Future Improvements
 
