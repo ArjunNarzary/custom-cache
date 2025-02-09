@@ -63,7 +63,7 @@ class MyCache {
 
     return {
       success: true,
-      message: "Cache set successfully",
+      message: "Cache stored successfully",
     }
   }
 

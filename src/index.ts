@@ -47,10 +47,10 @@ app.get("/cache/:key", (req: Request, res: Response) => {
     return
   }
 
-  res.json({ key, value })
+  res.json({ success: true, data: { [key]: value } })
 })
 
-// DELETE /cache/{key} → Remove key manually
+// DELETE key from cache
 app.delete("/cache/:key", (req: Request, res: Response) => {
   const key = req.params.key
   const deleted = MyCache.delete(key)
