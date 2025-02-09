@@ -8,7 +8,7 @@ class MyCache {
      * @param maxSize - The maximum number of entries the cache can hold. Defaults to 3.
      * @param ttl - The time-to-live for each cache entry in milliseconds. Defaults to 2 hours.
      */
-    constructor(maxSize = 3, ttl = 2 * 60 * 60 * 1000) {
+    constructor(maxSize = 10, ttl = 2 * 60 * 60 * 1000) {
         this.maxSize = maxSize; // Max cache size
         this.ttl = ttl; // TTL in milliseconds
         this.cache = new Map(); // Key-value store with expiration timestamps
@@ -72,7 +72,8 @@ class MyCache {
         }
         // Refresh LRU order
         this.cache.delete(key);
-        this.cache.set(key, { value, expiresAt });
+        const newExpiresAt = Date.now() + this.ttl;
+        this.cache.set(key, { value, expiresAt: newExpiresAt });
         return value;
     }
     /**
