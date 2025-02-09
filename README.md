@@ -34,11 +34,13 @@ npm install
 npm run dev
 ```
 
-🔹 The server starts on http://localhost:3000
+🔹 The server starts on http://localhost:8000
 
-📌 API Endpoints
+---
 
-✅ Store a Key-Value Pair
+## 📌 API Endpoints
+
+### ✅ Store a Key-Value Pair
 
 -POST /cache
 
@@ -69,7 +71,9 @@ Response
     "message": "Cache is full"
 ```
 
-✅ Retrieve a Value
+---
+
+### ✅ Retrieve a Value
 
 GET /cache/{key}
 
@@ -91,7 +95,9 @@ Response
 }
 ```
 
-✅ Delete a Key
+---
+
+### ✅ Delete a Key
 
 DELETE /cache/{key}
 
@@ -113,7 +119,9 @@ Response
 }
 ```
 
-✅ Retrieve All Cache Items
+---
+
+### ✅ Retrieve All Cache Items
 
 GET /cache
 
@@ -137,11 +145,20 @@ Response
 }
 ```
 
-🛠️ How It Works • TTL (Expiration): Entries auto-delete after 2min. • LRU (Least Recently Used): Whenever a key is fetched, key is removed and added again with new TTL • Cache Full?: Only expired items are removed. If no expired items exist, it returns an error instead of removing LRU. • \* • Periodic Cleanup: Every 5 seconds, expired keys are deleted.
+---
 
-🎯 Future Improvements
+## 🛠️ How It Works
 
-✅ Configurable TTL per key ✅ Persistent Storage (Redis) ✅ Web UI for Cache Monitoring
+• TTL (Expiration): Entries auto-delete after 2min.  
+• LRU (Least Recently Used): Whenever a key is fetched, key is removed and added again with new TTL  
+• Cache Full?: Only expired items are removed. If no expired items exist, it returns an error instead of removing LRU.  
+• Periodic Cleanup: Every 5 seconds, expired keys are deleted.
+
+## 🎯 Future Improvements
+
+✅ Configurable TTL per key  
+✅ Persistent Storage (Redis)  
+✅ Web UI for Cache Monitoring
 
 📜 License
 
